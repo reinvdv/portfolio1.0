@@ -1,0 +1,565 @@
+//https://codepen.io/Vidy/pen/ctLnK?limit=all&page=2&q=hover+img
+ @import url('https://fonts.googleapis.com/css?family=Merriweather');
+ @import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed');
+ @import url('https://fonts.googleapis.com/css?family=Oswald');
+   $blauw: #3399ff;
+   $donkerblauw: #00264d;
+
+html,body{
+  margin: 0 auto;
+  padding: 0;
+  font-family: sans-serif;
+  background:  url("reinier-bg.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+
+}
+
+p{  font-size: 1.2em;}
+.logo{
+  height: 65px;
+  width: auto;
+  margin-left: 100px;
+  margin-top: 5px;
+}
+
+  .brand{
+    float: left;
+    margin-left: 1em;
+    padding: 1em;
+
+  }
+  .title{
+    font-size: 3em;
+    font-family: 'Oswald', sans-serif;
+    display: block;
+    margin: 300px auto;
+    letter-spacing: 5px;
+  }
+  .title>b{
+    text-shadow: 0 -1px 0 #3399ff,
+    0 2px 0 #00264d,
+    0 0 5px #3399ff;
+  }
+.intro{
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  color: white;
+  position: absolute;
+  display: block;
+}
+
+#header-nav{
+  background: #3399ff;
+  background: -webkit-linear-gradient(left,#00264d , #3399ff);
+  background: -o-linear-gradient(right,#00264d, #3399ff);
+  background: -moz-linear-gradient(right,#00264d, #3399ff);
+  background: linear-gradient(to right,#00264d , #3399ff);
+  position: fixed;
+  top: 0;
+  display: block;
+  width: 100%;
+  -webkit-transition:-webkit-transform 0.7s .3s ease;
+  -moz-transition: -moz-transform 0.7s .3s ease;
+  -ms-transition:  -ms-transform 0.7s .3s ease;
+   transition:  transform 0.7s .3s ease;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+#header-nav.hide-nav-bar{
+   -webkit-transform: translate(0, -100%);
+   -moz-transform: translate(0, -100%);
+   -ms-transform: translate(0, -100%);
+   transform: translate(0, -100%);
+   -webkit-backface-visibility: hidden;
+}
+
+
+
+
+		.js nav[role=navigation] {
+			overflow: hidden;
+			max-height: 0;
+		}
+		nav[role=navigation].active {
+			max-height: 15em;
+		}
+		nav[role=navigation] ul {
+			margin: 0;
+			padding: 0;
+      float: right;
+  		padding: 2em 10em;
+
+		}
+		nav[role=navigation] li a {
+			display: block;
+			padding: 0.8em;
+      font-size: 1em;
+		}
+
+#menu>ul>li{ padding: 0  15px;}
+
+.menu-link {
+  height: 30px;
+  width: 33px;
+  cursor: pointer;
+}
+
+nav li {display: inline-block;}
+li{ list-style-type: none;}
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 25px;
+  transition: 0.3s;
+  letter-spacing: 2px;
+  color: white;
+}
+nav a:hover{
+  background-color: white;
+  color: $blauw;
+  border-radius: 4px;
+  box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.8);
+
+}
+
+
+.knop-werk{
+  list-style-type: none;
+  font-size: 25px;
+  display: block;
+  background-color: $blauw;
+  width: 9%;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 3px;
+  transition: 0.5s;
+  box-shadow: 0px 0px 8px 0px rgba(100, 100, 100, 0.8);
+
+
+}
+.knop-werk>a{
+  color: white;
+  text-decoration: none;
+}
+.knop-werk:hover{
+  background-color: #194c7f;
+  color: $blauw;
+
+
+}
+#section1{
+  margin: 0 auto;
+  width: 45%;
+  overflow: auto;
+  height: auto;
+
+}
+#section1>h1{padding-bottom: 10px; border-bottom: 2px solid $blauw;}
+#section2>h1{padding-bottom: 10px; border-bottom: 2px solid $blauw; text-align: center; width: 75%; margin: 0 auto; }
+
+
+.foto-reinier{
+  width: 200px ;
+  height: auto;
+  border-radius: 3px;
+  float: right;
+  padding: 15px;}
+#section2{
+  height: auto;
+  padding-bottom: 5%;
+  padding-top: 5%;
+
+
+}
+
+.container-werk{
+  width: 1350px;
+  height: 300px;
+  margin: 0 auto;
+  display: block;
+}
+
+.container-werk .werk-img {
+  width: 440px;
+  height: 250px;
+  margin: 5px;
+  float: left;
+  position: relative;
+}
+.container-werk .werk-img .caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px 20px;
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  width: calc(100% - 40px);
+}
+.container-werk .werk-img .caption p {
+  font-family: Arial;
+  font-size: 14px;
+  line-height: 18px;
+  padding-bottom: 10px;
+  color: white;
+}
+.container-werk .werk-img .caption a {
+  display: block;
+  font-family: 'Arial';
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 5px;
+  color: white;
+  background: $blauw;
+  transition: all 0.5s ease;
+}
+.container-werk .werk-img .caption a:hover {
+  color: white;
+  background: $donkerblauw;
+}
+.container-werk .werk-img .img {
+  width: 450px;
+  height: 250px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.container-werk .werk-img img {
+  transition: all 0.3s ease;
+}
+.container-werk .werk-img:hover .img {
+    -webkit-filter: blur(2px); /* Safari */
+    filter: blur(3px);
+}
+.container-werk .werk-img:hover .caption {
+  opacity: 1;
+  transform: scale(1,1) skew(0);
+}
+
+.contact-block{
+
+}
+
+
+  .input {
+    padding: 15px;
+    width: 20%;
+    border: 0;
+    margin: 0 auto;
+    display: block;
+    border-bottom: 2px solid $blauw;
+    transition: all .3s ease;
+    &:focus,
+    &:active {
+      outline: none;
+      border-bottom: 2px solid $donkerblauw;
+      transition: all .3s ease;
+    }
+  }
+
+
+.wrapper{
+  margin-top: 90vh;
+  width: 100%;
+  background-color: white;
+  border-top: 2px solid $blauw;
+}
+
+#map {height: 400px; width: 100%;}
+
+footer{
+background-color: $blauw;
+}
+.CV{
+  background-color: #f1f5f8;
+  width: 100%;
+  height: auto;
+}
+
+.cv-gedeelte a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 15px 45px 15px 45px;
+  transition: 0.3s;
+  letter-spacing: 1px;
+  color: $blauw;
+  background-color: white;
+  border-radius: 3px;
+  border: 2px solid $blauw;
+
+
+
+}
+.cv-gedeelte a:hover{
+  background-color: $blauw;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
+
+}
+.cv-gedeelte{
+  padding: 10px;
+  width: 175px;
+  margin: 0 auto;
+}
+.footer ul li a{
+  color: white;
+  text-decoration: none;
+  list-style-type: none;
+  transition: 0.3s;
+}
+
+.footer ul li a:hover{
+  color: $blauw;
+}
+.footer{
+  background-color: #194c7f;
+  padding-top: 10px;
+  width: 100%;
+  font-size: 1.2em;
+  height: 175px;
+
+}
+.cointainer-content-footer{
+  margin-left: 22%;
+}
+
+.content-footer{
+  width: 15%;
+  display: block;
+  height: auto;
+  float: left;
+  color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+
+
+
+//tablleettt
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+.sidenav{visibility: hidden;}
+#responive-veeg{
+  visibility: hidden;
+}
+@media screen and (max-width: 1340px){
+  #responive-veeg{visibility:visible; text-align: center;}
+
+  .wrapper-werk{
+    overflow: scroll;
+  }
+
+}
+
+@media screen and (max-width: 1200px){
+  .sidenav{visibility: visible;}
+#header-nav{
+  display: none;
+}
+
+.title{
+  font-size: 2em;
+  display: block;
+}
+
+.intro{
+  margin-top: -150px;
+}
+
+
+#section1{
+  width: 100%;
+  overflow: auto;
+  height: auto;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    display: show;
+    background-color: rgba(255, 255, 255, 0.8);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    color: black;
+    z-index: 1000;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.knop-werk{
+  display: block;
+  width: 200px;
+}
+
+
+.cv-gedeelte a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 15px 30px 15px 30px;
+
+
+}
+
+.cv-gedeelte{
+  padding: 10px;
+  margin: 0 auto;
+  width: 18%;
+}
+
+
+
+.footer{
+  display: none;
+  // background-color: #194c7f;
+  // padding-top: 10px;
+  // width: 100%;
+  // font-size: 1em;
+  // height: auto;
+  // position: absolute;
+
+}
+.cointainer-content-footer{
+  margin-left: 0%;
+}
+
+.content-footer{
+  width: 15%;
+  display: block;
+  height: auto;
+  float: left;
+  color: white;
+  padding-left: 25px;
+  padding-right: 65px;
+}
+
+
+
+
+
+
+}
+
+////////////////////////////////////////////Mobiel
+//////////////////////////////////////////////
+//////////////////////////////////////////////////
+@media screen and (max-width: 850px){
+
+  .title{
+    font-size: 1.5em;
+    display: block;
+    margin: 0px auto;
+    letter-spacing: 0px;
+  }
+
+  .intro{
+    margin-top: 100px;
+  }
+
+
+  .container-werk{
+    width: 1300px;
+    height: 300px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .container-werk .werk-img {
+    width: 400px;
+    height: 250px;
+    margin: 5px;
+    float: left;
+    position: relative;
+  }
+  .container-werk .werk-img .caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px 20px;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    width: calc(100% - 40px);
+  }
+
+  .container-werk .werk-img .img {
+    width: 400px;
+    height: 250px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+
+  .cv-gedeelte a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 15px 30px 15px 30px;
+  }
+
+  .cv-gedeelte{
+    padding: 10px;
+    width: 200px;
+    margin-left: 25%;
+  }
+
+
+
+
+  // .footer{
+  //   background-color: #194c7f;
+  //   padding-top: 10px;
+  //   width: 100%;
+  //   font-size: 0.7em;
+  //   height: 240px;
+  //
+  // }
+  // .cointainer-content-footer{
+  //   margin-left: 0%;
+  // }
+  //
+  // .content-footer{
+  //   width: 30%;
+  //   color: white;
+  //   padding-left: 15px;
+  //   padding-right: 40px;
+  // }
+
+
+}
